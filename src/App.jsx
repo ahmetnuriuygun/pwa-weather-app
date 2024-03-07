@@ -66,9 +66,11 @@ function App() {
                         <FaLocationDot className='text-red-700'/>
 
                     </button>
-                    <input type="text" placeholder='Search city' onKeyUp={() => {
-                        submitCity();
-                    }}
+                    <input type="text" placeholder='Search city' onKeyUp={(e) => {
+                        if(e.key==="Enter") {
+                            submitCity();
+
+                        } }}
                            className='focus:outline-none w-full text-[#212121] text-lg' value={input}
                            onChange={e => setInput(e.target.value)}/>
 
